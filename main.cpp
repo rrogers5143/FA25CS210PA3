@@ -133,11 +133,19 @@ bool dfs(int r, int c, //current position
     if (visited[r][c]) {
         return false;
     }
+    // Mark as visited
+    visited[r][c] = true;
 
     //base case 2: hit wall
     if (maze[r][c] == 1) {
         return false;
     }
+
+    //base case 3: exit reached
+    if (r == exit_r && c == exit_c) {
+        return true;
+    }
+
 }
 
 // ----------------------------------------------------------
