@@ -153,11 +153,16 @@ bool dfs(int r, int c, //current position
 
     //recursive case: all 4 directions
     for (int i = 0; i < 4; i++) {
-        int new_r = r + dr[i];
-        int new_c = c + dc[i];
+        int nr = r + dr[i];  //new row
+        int nc = c + dc[i];  //new column
 
-        if (dfs(new_r, new_c, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
-            return true;
+        //set parent before recursing
+        parent_r[nr][nc] = r;
+        parent_c[nr][nc] = c;
+
+        //recursion
+        if (dfs(nr, nc, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
+            return true;  //path found
         }
     }
 
