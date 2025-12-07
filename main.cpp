@@ -151,6 +151,16 @@ bool dfs(int r, int c, //current position
         return false;
     }
 
+    //recursive case: all 4 directions
+    for (int i = 0; i < 4; i++) {
+        int new_r = r + dr[i];
+        int new_c = c + dc[i];
+
+        if (dfs(new_r, new_c, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
+            return true;
+        }
+    }
+
 }
 
 // ----------------------------------------------------------
@@ -196,11 +206,11 @@ int main() {
     // STUDENT WORK:
     // If found, print the path
     // ------------------------------------------------------
-    // if (found) {
-    //     printPath(exitcell, parent_r, parent_c, ent_r, ent_c);
-    // } else {
-    //     cout << "\nNo path exists.\n";
-    // }
+     if (found) {
+         printPath(exitcell, parent_r, parent_c, ent_r, ent_c);
+     } else {
+         cout << "\nNo path exists.\n";
+     }
 
     return 0;
 }
