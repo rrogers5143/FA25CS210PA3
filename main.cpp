@@ -124,6 +124,15 @@ bool dfs(int r, int c, //current position
          vector<vector<int> >& parent_r,
          vector<vector<int> >& parent_c,
          int exit_r, int exit_c) { //target destination
+
+    //get maze dimensions
+    int N = maze.size();
+    int M = maze[0].size();
+
+    //base case 1: already visited
+    if (visited[r][c]) {
+        return false;
+    }
 }
 
 // ----------------------------------------------------------
