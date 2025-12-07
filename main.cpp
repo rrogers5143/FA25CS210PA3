@@ -161,6 +161,8 @@ bool dfs(int r, int c, //current position
         }
     }
 
+    //no path found
+    return false;
 }
 
 // ----------------------------------------------------------
