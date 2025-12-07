@@ -146,6 +146,11 @@ bool dfs(int r, int c, //current position
         return true;
     }
 
+    //base case 4: out of bounds of maze
+    if (r < 0 || r >= N || c < 0 || c >= M) {
+        return false;
+    }
+
 }
 
 // ----------------------------------------------------------
