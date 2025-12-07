@@ -152,8 +152,8 @@ bool dfs(int r, int c, //current position
     }
 
     for (int i = 0; i < 4; i++) {
-        int nr = r + dr[i];  //new row
-        int nc = c + dc[i];  //new column
+        int nr = r + dr[i]; //new row
+        int nc = c + dc[i]; //new column
 
         //check if neighbor is valid before setting parent
         if (nr >= 0 && nr < N && nc >= 0 && nc < M &&
@@ -165,7 +165,7 @@ bool dfs(int r, int c, //current position
 
             //recursion
             if (dfs(nr, nc, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
-                return true;  // Path found!
+                return true; // Path found!
             }
         }
     }
